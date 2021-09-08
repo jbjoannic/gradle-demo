@@ -1,8 +1,8 @@
 package com.devmind.gradle;
 
-import org.junit.Test;
 
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class MyApplicationTest {
 
@@ -11,7 +11,7 @@ public class MyApplicationTest {
 
     @Test
     public void shouldSayHello(){
-        assertEquals("I want to learn Gradle", application.getMessage());
+        Assertions.assertEquals("I want to learn Gradle", application.getMessage());
     }
 
 }
