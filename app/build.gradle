@@ -66,5 +66,5 @@ task testWriteBoth {
     doLast {
         println 'This (testWriteBoth) is executed last during the execution phase.'
     }
-    println 'This (testWriteBoth) is executed during the configuration phase as well.'
+    println 'This (testWriteBoth) is executed during the configuration phase as well.TEST GIT avec yoyo'
 }
