@@ -9,6 +9,7 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    id 'java'
 }
 
 repositories {
@@ -32,4 +33,38 @@ application {
 tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+}
+
+task hello {
+    doLast {
+        println 'Hello'
+    }
+}
+
+task world(dependsOn: hello) {
+    doLast {
+        println 'World'
+    }
+}
+
+println 'This is executed during the configuration phase.'
+
+task configured {
+    println 'This (configured) is also executed during the configuration phase.'
+}
+
+task testWrite {
+    doLast {
+        println 'This (testWrite) is executed during the execution phase.'
+    }
+}
+
+task testWriteBoth {
+    doFirst {
+        println 'This (testWriteBoth) is executed first during the execution phase.'
+    }
+    doLast {
+        println 'This (testWriteBoth) is executed last during the execution phase.'
+    }
+    println 'This (testWriteBoth) is executed during the configuration phase as well.'
 }
